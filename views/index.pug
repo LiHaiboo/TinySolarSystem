@@ -1,0 +1,112 @@
+extends layout
+
+block content
+  body.opening.hide-UI.view-2D.zoom-large.data-close.controls-close
+    #navbar
+      a#toggle-data(href="#data")
+        i.icon-data
+        | Data
+      h1 3D CSS Solar System
+      a#toggle-controls(href="#controls")
+        i.icon-controls
+        | Controls
+    #data
+      a.sun(title="sun", href="#sunspeed") Sun
+      a.mercury(title="mercury", href="#mercuryspeed") Mercury
+      a.venus(title="venus", href="#venusspeed") Venus
+      a.earth.active(title="earth", href="#earthspeed") Earth
+      a.mars(title="mars", href="#marsspeed") Mars
+      a.jupiter(title="jupiter", href="#jupiterspeed") Jupiter
+      a.saturn(title="saturn", href="#saturnspeed") Saturn
+      a.uranus(title="uranus", href="#uranusspeed") Uranus
+      a.neptune(title="neptune", href="#neptunespeed") Neptune
+    #controls
+      label.set-view
+        input(type="checkbox")
+      label.set-zoom
+        input(type="checkbox")
+      label
+        input.set-speed(type="radio", name="scale", checked)
+        span Speed
+      label
+        input.set-size(type="radio", name="scale")
+        span Size
+      label
+        input.set-distance(type="radio", name="scale")
+        span Distance
+    #universe.scale-stretched
+      #galaxy
+        #solar-system.earth
+          #mercury.orbit
+            .pos
+              .planet
+                dl.infos
+                  dt Mercury
+                  dd
+                    span
+          #venus.orbit
+            .pos
+              .planet
+                dl.infos
+                  dt Venus
+                  dd
+                    span
+          #earth.orbit
+            .pos
+              .orbit
+                .pos
+                  .moon
+              .planet
+                dl.infos
+                  dt Earth
+                  dd
+                    span
+          #mars.orbit
+            .pos
+              .planet
+                dl.infos
+                  dt Mars
+                  dd
+                    span
+          #jupiter.orbit
+            .pos
+              .planet
+                dl.infos
+                  dt Jupiter
+                  dd
+                    span
+          #saturn.orbit
+            .pos
+              .planet
+                .ring
+                dl.infos
+                  dt Saturn
+                  dd
+                    span
+          #uranus.orbit
+            .pos
+              .planet
+                dl.infos
+                  dt Uranus
+                  dd
+                    span
+          #neptune.orbit
+            .pos
+              .planet
+                dl.infos
+                  dt Neptune
+                  dd
+                    span
+          #sun
+            dl.infos
+              dt Sun
+              dd
+                span
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js")
+    script(type="text/javascript").
+      if (typeof jQuery == 'undefined') {
+        document.write(unescape("%3Cscript src='js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+      }
+    script(src="solarResourses/js/prefixfree.min.js")
+    script(src="solarResourses/js/scripts.min.js")
+
